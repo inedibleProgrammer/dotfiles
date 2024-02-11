@@ -1,0 +1,4 @@
+
+
+[language-server.py]
+command = "pylsp"

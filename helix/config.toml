@@ -1,0 +1,14 @@
+theme = "gruvbox"
+
+
+[editor]
+line-number = "relative"
+
+[keys.insert]
+"C-[" = "normal_mode"
+
+
+[keys.normal]
+"C-e" = "scroll_down"
+"C-y" = "scroll_up"
+
