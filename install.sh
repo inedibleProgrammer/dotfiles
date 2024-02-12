@@ -5,6 +5,7 @@ SCRIPT_DIR="$( cd "$( dirname "$BASH_SOURCE[0]" )" && pwd )"
 
 
 cp ./.emacs ~/
+cp -r ./.emacs.jup ~/
 # cp ./.tmux.conf ~/
 # cp ./.vimrc ~/
 # TODO: Something different for linux

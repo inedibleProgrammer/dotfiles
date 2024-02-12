@@ -2,14 +2,18 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 
-
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(load "~/.emacs.jup/jup.el")
 
 ;;(setq-default indent-tabs-mode nil)
 ;;(setq-default tab-width 4)
 ;;(setq indent-line-function 'insert-tab)
-(setq c-basic-offset 4)
+;;(setq c-basic-offset 4)
+(setq c-default-style "linux"
+      c-basic-offset 4)
 
+(setq next-screen-context-lines 15)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
