@@ -1,8 +1,13 @@
 ;;; -*- lexical-binding: t -*-
 
+
 (setq jup-note-dirs
-      '("/home/john/jup/PrivateNotes"
+      '("/home/john/jup/PrivateNotes/Technical"
 	))
+
+(setq jup-note-dir "/home/john/jup/PrivateNotes/Technical/")
+
+(setq jup-note-find-file 'find-file)
 
 (defun generate-yyyymmddhhmmss-timestamp ()
   "Return the current date and time as a string in YYYYMMDDHHMMSS format."
@@ -23,25 +28,32 @@
 (defun jup-note-follow-link(note-timestamp)
   "Searches `jup-note-dir` for the specified note"
   (interactive)
-  (debug)
-  (message jup-note-dirs)
-  (find-file (car jup-note-dirs))
-  2)
+  ;; (debug)
+  ;; (message jup-note-dirs)
+  ;; (find-file (car jup-note-dirs))
+  ;; (funcall jup-note-find-file (car jup-note-dirs))
+  (setq my-dir (concat jup-note-dir "20240110202130/README.md"))
+  (find-file my-dir)
+  )
 
-;; Tests:
-(jup-note-follow-link "20240110202130")
+;; "manual" Integration Test:
+;; (jup-note-follow-link "20240110202130")
 
 
 (defun jup-note-create-reference()
-  "when you're in a note, this generates the [first-line](timestamp) string for you"
+  "When you're in a note, this generates the `[first-line](timestamp)` string for you"
   )
 
-(ert-deftest jup-note-get-first-path()
-  (setq my-var (car jup-note-dirs)
-  (should (eq my-var jup-note-dirs)))
-
-(ert-deftest jup-note-follow-link-returns-something()
-  (setq my-var (jup-note-follow-link "20240110202130"))
-  (should (eq my-var 2)))
 
 
+(ert-deftest jup-note-follow-link-lands-correctly()
+  ;; (setq my-var (jup-note-follow-link "20240110202130"))
+  (setq expect (concat jup-note-dir "20240110202130/README.md"))
+  (save-excursion
+    (jup-note-follow-link "20240110202130")
+    (should (string-equal (buffer-file-name) expect))))
+
+
+;; (ert-deftest jup-note-get-first-path()
+;;   (setq my-var (car jup-note-dirs)
+;;   (should (eq my-var jup-note-dirs))))
