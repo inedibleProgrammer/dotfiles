@@ -6,6 +6,8 @@
 
 (load "~/.emacs.jup/jup.el")
 
+;; (add-to-list 'load-path "~/jup/dotfiles/TBD"
+
 ;;(setq-default indent-tabs-mode nil)
 ;;(setq-default tab-width 4)
 ;;(setq indent-line-function 'insert-tab)
