@@ -3,13 +3,14 @@
 (require 'ert)
 (require 'jup-test-helper)
 
-(defclass Rectangle ()
-  () "First class ever made")
+(cl-defstruct person first-name age gender)
 
-(ert-deftest test-class-01 ()
+(ert-deftest test-struct-00 ()
   ;; (Shape :value 3 :reference nil)
-  (setq rect (make-instance 'Rectangle))
-  )
+  ;; (setq rect (make-instance 'Rectangle))
+  (setq myperson (make-person :first-name "john" :age 30 :gender "male"))
+  (message (person-first-name myperson)))
+
 
 
 (ert-deftest test-delete-nonexistent-directory-returns-error()
