@@ -1,13 +1,7 @@
-#!/usr/bin/bash
+# Ensure that the script's context is its own directory
+cd "$(dirname "${0}")"
 
-# Make this script's directory the current directory
-SCRIPT_DIR="$( cd "$( dirname "$BASH_SOURCE[0]" )" && pwd )"
+cp -r emacs/* ~/.emacs.d
 
 
-cp ./.emacs ~/
-cp -r ./.emacs.jup ~/
-# cp ./.tmux.conf ~/
-# cp ./.vimrc ~/
-# TODO: Something different for linux
-cp -r ./helix $HOME/AppData/Roaming
 

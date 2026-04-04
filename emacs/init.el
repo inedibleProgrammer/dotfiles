@@ -1,4 +1,7 @@
 ;; -*- lexical-binding: t; -*-
+(add-to-list 'load-path (expand-file-name "jup-note" user-emacs-directory))
+(require 'jup-note)
+
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
